@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          App creada con CLI
+          App creada con CLI Por Dario Pacheco
         </a>
       </header>
     </div>
