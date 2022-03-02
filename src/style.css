@@ -1,0 +1,38 @@
+.header {
+    background-color: #58C265;
+}
+
+.navBar {
+    display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  list-style: none;
+  height: 5rem;
+  padding-left: 1rem;
+  color: #3D3737;
+}
+
+.headerUnorderedList {
+    text-decoration: none;
+    list-style: none;
+}
+.headerList {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 1rem;
+    color: #3D3737;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.headerList > li {
+    margin-right: 1rem;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+    color:#3D3737
+}
+
