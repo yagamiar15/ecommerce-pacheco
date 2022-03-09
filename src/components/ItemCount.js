@@ -25,7 +25,6 @@ function ItemCount() {
 
   return (
     <div className="div__itemcount">
-      <h3>Producto</h3>
       <h4>Cantidad</h4>
       <div className="div__itemcount-botonera">
         <button className="button__restar" onClick={HandleRestar}></button>
