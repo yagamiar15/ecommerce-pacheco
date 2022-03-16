@@ -1,40 +1,40 @@
-import { useEffect, useState } from "react";
-import ItemList from "./ItemList";
+import ItemList from "./ItemList"
+import { useEffect, useState } from "react"
+import { toast } from "react-toastify"
+import { useParams } from "react-router-dom"
+import productos from "./productos.json"
+
+console.log(productos)
 
 const ItemListContainer = () => {
 
-  const Productos = [{
-    id: 1,
-    title: "Ejemplo 1",
-    price: 5,
-  },
-  {
-    id: 2,
-    title: "Ejemplo 2",
-    price: 10,
-  },
-  {
-    id: 3,
-    title: "Ejemplo 3",
-    price: 15,
-  }
-];
+    const [loading, setLoading] = useState(true)
+    const [productos, setProductos] = useState([])
+    const {idCategoria} = useParams()
+    
+    useEffect(() => {
+        
+        fetch('https://fakestoreapi.com/products')
+        .then((response)=>{
+            return response.json()
+        })
+        .then((resultado)=>{
+            setProductos(resultado)
+        })
+        .catch(()=>{
+            toast.error("Error al cargar los productos")
+        })
+        .finally(()=>{
+            setLoading(false)
+        })
+        
+    },[idCategoria])
 
-const [item, setData] = useState([]);
-const [isLoaded, setIsLoaded] = useState(false);
-useEffect(()=>{
-  setIsLoaded(false);
-  setTimeout(()=>{
-    setData(Productos);
-    setIsLoaded(true);
-  },2000);
-  }, [])
+    if(loading){
+        return <h1>Cargando...</h1>
+    }else{
+        return <ItemList productos={productos}/>
+    }
+}
 
-  return (
-    <div>
-      {isLoaded ? <ItemList item={item}/>:<div>LOADING ITEMS...</div>} 
-    </div>
-  );
-};
-
-export default ItemListContainer;
+export default ItemListContainer

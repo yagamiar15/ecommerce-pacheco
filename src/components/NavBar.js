@@ -2,12 +2,12 @@ import CartWidget from "./CartWidget";
 
 const NavBar=()=>{
     return (
-        <nav class="navBar">
+        <nav className="navBar">
         <h3>
             Tienda Pacheco
         </h3>
-        <ul class="headerUnorderedList">
-            <div class="headerList">
+        <ul className="headerUnorderedList">
+            <div className="headerList">
                 <li>
                     <a href="#">Inicio</a>
                 </li>
