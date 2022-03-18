@@ -1,16 +1,15 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
+import { useParams } from "react-router-dom";
 import ItemDetail from "./ItemDetail";
 
 const ItemDetailContainer = () => {
 
-  const [item, setItem] = useState({});
   const [loading, setLoading] = useState(true);
-  const {idItem} = useParams()
+  const [item, setItem] = useState([]);
+  const {idItem} = useParams();
 
   useEffect(()=>{
-
     toast.info("Cargando detalle...");
 
     fetch(`https://fakestoreapi.com/products/${idItem}`)
@@ -23,16 +22,16 @@ const ItemDetailContainer = () => {
       setItem(respuesta)
     })
     .catch(()=>{
-      toast.error("Error al cargar el producto")
+      toast.error("Error, intente nuevamente")
     })
     .finally(()=>{
       setLoading(false)
-    })
+    });
 
   },[])
 
   if(loading){
-    return <h1>Loading...</h1>
+    return <h1>Cargando...</h1>
   }else{
     return (
       <ItemDetail item={item}/>

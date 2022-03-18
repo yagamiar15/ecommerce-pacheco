@@ -1,27 +1,36 @@
+import React from "react";
+import { NavLink } from "react-router-dom";
 import CartWidget from "./CartWidget";
 
 const NavBar=()=>{
     return (
         <nav className="navBar">
-        <h3>
-            Tienda Pacheco
-        </h3>
-        <ul className="headerUnorderedList">
-            <div className="headerList">
+            <div className="navBar__title">
+            <ul>
+          <NavLink to="/">Tienda Pacheco</NavLink>
+            </ul>
+            </div>
+            <div className="navBar__items">
+                <CartWidget cantidad="0" />
                 <li>
-                    <a href="#">Inicio</a>
+                    <NavLink to="/">Inicio</NavLink>
                 </li>
                 <li>
-                    <a href="#">Productos</a>
+                <NavLink to="/category/productos">Catálogo de productos</NavLink>
                 </li>
                 <li>
-                    <a href="#">Contacto</a>
+                <NavLink to="/category/electronics">Electronica</NavLink>
                 </li>
                 <li>
-                    <CartWidget cantidad="0" />
+                <NavLink to="/category/jewelery">Joyería</NavLink>
+                </li>
+                <li>
+                <NavLink to="/category/women's clothing">Ropa femenina</NavLink>
+                </li>
+                <li>
+                <NavLink to="/category/men's clothing">Ropa masculina</NavLink>
                 </li>
             </div>
-        </ul>
         </nav>
     )
 }

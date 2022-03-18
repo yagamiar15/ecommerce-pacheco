@@ -28,13 +28,20 @@ const ItemListContainer = () => {
             setLoading(false)
         })
         
-    },[idCategoria])
+    },[idCategoria]);
 
-    if(loading){
-        return <h1>Cargando...</h1>
-    }else{
-        return <ItemList productos={productos}/>
-    }
-}
+    if (loading) {
+        return <h1>Cargando...</h1>;
+      } else {
+        if ((idCategoria != "productos") & (idCategoria != undefined)) {
+          let productosFiltrados = productos.filter(function (obj) {
+            return obj.category === `${idCategoria}`;
+          });
+          return <ItemList productos={productosFiltrados} />;
+        } else {
+          return <ItemList productos={productos} />;
+        }
+      }
+    };
 
-export default ItemListContainer
+export default ItemListContainer;

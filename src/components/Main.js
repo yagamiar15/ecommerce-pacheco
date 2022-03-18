@@ -9,9 +9,9 @@ const Main = () => {
         <Container as="main" fluid>
             <Routes>
                 <Route path="/" element={<ItemListContainer/>} />
-                <Route path="/categoria/:idCategoria" element={<ItemListContainer/>} />
-                <Route path="/producto/:idProducto" element={<ItemDetailContainer/>} />
-                <Route path="/CartWidget" element={<CartWidget/>} />
+                <Route path="/cartWidget" element={<CartWidget/>} />
+                <Route path="/category/:idCategoria" element={<ItemListContainer/>} />
+                <Route path="/producto/:idItem" element={<ItemDetailContainer/>} />
             </Routes>
         </Container>
     );

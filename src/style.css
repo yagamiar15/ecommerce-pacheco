@@ -2,28 +2,46 @@
     background-color: #58C265;
 }
 
-.navBar {
-    display: flex;
+.header {
+  box-shadow: 0px 0px 6px black;
+  z-index: 100;
+}
+.header > .navBar {
+  display: flex;
   align-items: center;
   justify-content: space-between;
   text-decoration: none;
   list-style: none;
   height: 5rem;
   padding-left: 1rem;
-  color: #3D3737;
+  color: #fff;
 }
 
-.headerUnorderedList {
-    text-decoration: none;
-    list-style: none;
+.header > .navBar > .navBar__title > ul {
+  font-size: 1.5em;
 }
-.headerList {
-    display: flex;
-    justify-content: space-between;
-    margin: 0 1rem;
-    color: #3D3737;
-    font-weight: bold;
-    text-decoration: none;
+.navBar__items {
+  display: flex;
+}
+
+.header > .navBar > .navBar__items > li {
+  margin: 0 1rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(52, 112, 209);
+  transition: ease-in-out;
+  transition-duration: 200ms;
+}
+
+.main {
+  flex-grow: 1;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 .headerList > li {
@@ -46,16 +64,24 @@ a {
     border-radius: 10px;
     margin-left: 1rem;
   }
+
+  .header > .navBar > .navBar__title > ul {
+    font-size: 1.5em;
+  }
+
+  .div__itemcount {
+    background-color: #58C265;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20vw;
+    padding: 1rem 0rem;
+  }
   
   .div__itemcount > h3 {
+    font-weight: 100;
     font-size: 1rem;
     color: #3D3737;
-  }
-  .div__itemcount > h4 {
-    font-weight: 80;
-    font-size: 1rem;
-    color: #3D3737;
-    margin-top: 25px;
   }
   
   .div__itemcount-botonera {
@@ -65,7 +91,7 @@ a {
     margin: 1rem;
     padding: 0.3rem 0;
     align-items: center;
-    border-radius: 5px;
+    border-radius: 7px;
     border: 1px solid #c4c4c4;
     justify-content: space-around;
     background-color: #3D3737;
@@ -190,7 +216,7 @@ a {
   .article__itemDetail-item {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 70%;
     padding: 1rem 3rem;
     font-size: 1rem;

@@ -1,10 +1,9 @@
 import ItemCount from './ItemCount';
 
 const ItemDetail = ({item}) => {
-
     const onAdd = (cantidadSeleccionada) => {
         console.log('Añadir al carrito',cantidadSeleccionada)
-    }
+    };
 
     return (
         <article className="article__center">
@@ -19,7 +18,7 @@ const ItemDetail = ({item}) => {
                 <button>Finalizar compra</button>
             </article>
         </article>
-    )
-}
+    );
+};
 
-export default ItemDetail
+export default ItemDetail;
