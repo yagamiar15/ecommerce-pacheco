@@ -33,7 +33,7 @@ const ItemListContainer = () => {
     if (loading) {
         return <h1>Cargando...</h1>;
       } else {
-        if ((idCategoria != "productos") & (idCategoria != undefined)) {
+        if ((idCategoria !== "productos") & (idCategoria !== undefined)) {
           let productosFiltrados = productos.filter(function (obj) {
             return obj.category === `${idCategoria}`;
           });

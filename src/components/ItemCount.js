@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function ItemCount() {
   let stock = 5;
@@ -30,9 +31,8 @@ function ItemCount() {
         <p>{itemCount}</p>
         <button className="button__sumar" onClick={HandleSumar}></button>
       </div>
-      <button className="button__agregar" onClick={HandleAgregar}>
-        Añadir al carrito
-      </button>
+      <button className="button__agregar" onClick={HandleAgregar}>Añadir al carrito</button>
+      <Link to='/cart'><button className="button__agregar">Finalizar compra</button></Link>
     </div>
   );
 }
