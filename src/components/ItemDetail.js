@@ -22,7 +22,12 @@ const ItemDetail = ({item}) => {
                 <p className="itemDetail__descripcion">{item.description}</p>
                     <p>${item.price}</p>
                 </div>
-                { cantidad === 0 ? <ItemCount item={item} onAdd={onAdd} /> : (<Link to="/cart"><button className="button__agregar">Finalizar compra</button></Link>)}
+                { cantidad === 0 ? <ItemCount item={item} onAdd={onAdd} /> : 
+                    <div>
+                        <Link to="/cart"><button className='button__agregar'>Finalizar Compra</button></Link>
+                        <Link to="/category/productos"><button className='button__agregar'>Continuar Comprando</button></Link>
+                    </div>}
+
             </article>
         </article>
     );
