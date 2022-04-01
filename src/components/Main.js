@@ -13,6 +13,7 @@ const Main = () => {
                 <Route path="/cartWidget" element={<CartWidget/>} />
                 <Route path="/category/:idCategoria" element={<ItemListContainer/>} />
                 <Route path="/producto/:idItem" element={<ItemDetailContainer/>} />
+                <Route path="/category/productos" element={<ItemListContainer />} />
                 <Route path='/cart' element={<Cart />} />
             </Routes>
         </Container>

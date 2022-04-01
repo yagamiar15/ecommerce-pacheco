@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { useParams } from "react-router-dom";
 import ItemDetail from "./ItemDetail";
+import { db } from "./firebase";
+import { collection, query, where, getDocs } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
 
@@ -10,25 +12,21 @@ const ItemDetailContainer = () => {
   const {idItem} = useParams();
 
   useEffect(()=>{
+
     toast.info("Cargando detalle...");
 
-    fetch(`https://fakestoreapi.com/products/${idItem}`)
-    .then((response)=>{
-      setTimeout(2000);
-      toast.dismiss();
-      return response.json()
-    })
-    .then((respuesta)=>{
-      setItem(respuesta)
-    })
-    .catch(()=>{
-      toast.error("Error, intente nuevamente")
-    })
-    .finally(()=>{
-      setLoading(false)
-    });
+    const productosCollection = collection(db, "productos");
+    const filtro = query(productosCollection, where("id", "==", Number(idItem)));
+    const pedido = getDocs(filtro);
 
-  },[])
+    pedido
+      .then((res) => setItem(res.docs[0].data()))
+      .catch((err) => toast.error("Error, intente nuevamente"))
+      .finally(() => setTimeout(() => {
+        toast.dismiss();
+        setLoading(false);
+      }, 1000));
+    }, [idItem]);
 
   if(loading){
     return <h1>Cargando...</h1>

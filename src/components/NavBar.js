@@ -22,7 +22,7 @@ const NavBar=()=>{
                 <NavLink to="/category/electronics">Electronica</NavLink>
                 </li>
                 <li>
-                <NavLink to="/category/jewelery">Joyería</NavLink>
+                <NavLink to="/category/joyeria">Joyería</NavLink>
                 </li>
                 <li>
                 <NavLink to="/category/women's clothing">Ropa femenina</NavLink>
