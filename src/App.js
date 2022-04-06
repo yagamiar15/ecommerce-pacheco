@@ -1,4 +1,4 @@
-import Header from "./components/Header"
+import NavBar from "./components/NavBar";
 import Main from "./components/Main"
 import { ToastContainer } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css";
@@ -10,7 +10,7 @@ const App = () => {
     return (
         <CartContextProvider>
         <BrowserRouter>
-            <Header />
+            <NavBar />
             <Main />
             <ToastContainer />
         </BrowserRouter>

@@ -4,14 +4,15 @@ import CartWidget from "./CartWidget";
 
 const NavBar=()=>{
     return (
+        <header class= "header">
         <nav className="navBar">
             <div className="navBar__title">
             <ul>
-          <NavLink to="/">Tienda Pacheco</NavLink>
+          <NavLink to="/">Comercio Libre</NavLink>
             </ul>
             </div>
             <div className="navBar__items">
-                <CartWidget cantidad="0" />
+                <CartWidget className="cartWidget" />
                 <li>
                     <NavLink to="/">Inicio</NavLink>
                 </li>
@@ -19,7 +20,7 @@ const NavBar=()=>{
                 <NavLink to="/category/productos">Catálogo de productos</NavLink>
                 </li>
                 <li>
-                <NavLink to="/category/electronics">Electronica</NavLink>
+                <NavLink to="/category/electronics">Electrónica</NavLink>
                 </li>
                 <li>
                 <NavLink to="/category/joyeria">Joyería</NavLink>
@@ -32,6 +33,6 @@ const NavBar=()=>{
                 </li>
             </div>
         </nav>
-    )
+    </header>)
 }
 export default NavBar;

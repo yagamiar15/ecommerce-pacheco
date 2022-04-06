@@ -26,15 +26,16 @@ const Carrito = () => {
                 <h4>Cantidad: {product.cantidad}</h4>
                 <h4>Precio unitario: $ {product.price}</h4>
                 <h4>Subtotal: $ {product.price * product.cantidad}</h4>
-                <button onClick={() => borrarProd(product.id)}>Eliminar</button>
+                <button className='button__agregar' onClick={() => borrarProd(product.id)}>Eliminar</button>
               </div>
             </div>
           ))}
-          <h2>Total: ${calcularTotal()}</h2>
+                <h2>Total: ${calcularTotal()}</h2>
         </div>
       )}
         {" "}
         <button onClick={vaciarCarrito}>Vaciar carrito</button>
+        <Link to="/checkout"><button>Finalizar compra</button></Link>
     </>
   );
 };
