@@ -5,6 +5,7 @@ import ItemDetailContainer from './ItemDetailContainer';
 import CartWidget from './CartWidget';
 import Cart from './Cart'
 import Form from './Form';
+import BuySuccess from './BuySuccess';
 
 const Main = () => {
     return (
@@ -17,6 +18,7 @@ const Main = () => {
                 <Route path="/category/productos" element={<ItemListContainer />} />
                 <Route path='/cart' element={<Cart />} />
                 <Route path="/checkout" element={<Form />} />
+                <Route path="/buySuccess" element={<BuySuccess />} />
             </Routes>
         </Container>
     );

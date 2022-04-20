@@ -48,7 +48,7 @@ function Form() {
       codigoPostal === ""
     ) {
       setError(true);
-      toast.error("Por favor, debe rellenar todos los datos");
+      toast.error("Por favor, rellena todos los datos");
     } else {
       setEnviado(true);
       setError(false);
@@ -75,15 +75,15 @@ function Form() {
 
     pedido
       .then((res) => {
-        toast.success("Compra exitosa");
+        window.location.href = "/buySuccess";
       })
       .catch((error) => {
-        toast.error("Ups...algo se rompió");
+        toast.error("Error, intente nuevamente");
       });
   };
 
   return (
-    <div>
+    <div className="div__form">
       <form>
         <h2>Datos de Envio</h2>
         <h3>Nombre</h3>
@@ -126,7 +126,7 @@ function Form() {
           onChange={handleEmail}
           value={email}
         />
-        <button onClick={handleSubmit}>Comprar</button>
+        <button className="div__form__button" onClick={handleSubmit}>Comprar</button>
       </form>
     </div>
   );

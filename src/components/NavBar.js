@@ -4,7 +4,7 @@ import CartWidget from "./CartWidget";
 
 const NavBar=()=>{
     return (
-        <header class= "header">
+        <header className= "header">
         <nav className="navBar">
             <div className="navBar__title">
             <ul>
