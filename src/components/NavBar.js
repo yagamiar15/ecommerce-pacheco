@@ -7,9 +7,12 @@ const NavBar=()=>{
         <header className= "header">
         <nav className="navBar">
             <div className="navBar__title">
-            <ul>
-          <NavLink to="/">Comercio Libre</NavLink>
-            </ul>
+                <ul>
+                <NavLink to="/">
+                    <img id="logo" src="https://toppng.com/uploads/preview/trolley-vector-grocery-cart-jpg-royalty-free-shopping-cart-vector-11562900803kma5vmgfao.png" alt=""></img>
+                    Comercio Libre
+                </NavLink>
+                </ul>
             </div>
             <div className="navBar__items">
                 <CartWidget className="cartWidget" />

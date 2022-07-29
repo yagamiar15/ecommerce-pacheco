@@ -32,6 +32,12 @@ main {
   color: #fff;
 }
 
+#logo {
+  width: 30px;
+  height: 30px;
+  padding-right: 5px;
+}
+
 .header > .navBar > .navBar__title > ul {
   font-size: 1.5em;
 }
